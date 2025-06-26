@@ -1,0 +1,153 @@
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #202124;
+}
+
+h1, h2, h3, input, button {
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+input::placeholder {
+  color: #94a3b8; /* slate-400 */
+  font-style: italic;
+}
+
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background: #eff6ff;
+  gap: 14px;
+}
+
+header {
+  display: flex;
+  align-items: stretch;
+}
+
+header, .main {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 14px;
+}
+
+header input {
+  flex: 1;
+  border-radius: 18px;
+  outline: none;
+  width: 100%;
+}
+
+header button {
+  border-radius: 18px;
+  background: transparent;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+header button:hover {
+  opacity: 0.7;
+}
+
+input:focus, button:focus {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+header button,
+header input {
+  padding: 14px 18px;
+  border: none;
+  outline: none;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+p {
+  font-size: 0.9em;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.todoItem {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: white;
+  flex-wrap: wrap;
+  word-break: break-word;
+  transition: transform 0.2s ease;
+}
+
+.todoItem:hover {
+  transform: translateY(-2px);
+}
+
+.todoItem p {
+  flex: 1;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.actionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.actionsContainer button {
+  transition-duration: 200ms;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.actionsContainer button:hover {
+  opacity: 0.7;
+}
+
+@media (min-width: 640px) {
+  header button,
+  header input {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  header input,
+  header button {
+    width: 100%;
+    font-size: 1em;
+  }
+}
