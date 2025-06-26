@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 export default function TodoInputs(props) {
-    const { handleTodos, todoVal, setTodoVal } = props;
+    const { handleTodos, todoVal, setTodoVal, handleUndo, handleRedo } = props;
     return (
         <header>
             <input 
@@ -23,6 +23,12 @@ export default function TodoInputs(props) {
                     setTodoVal('');
                 }
             }}> Add </button>
+            <button title="Undo Last Action" onClick={handleUndo}>
+                <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <button title="Redo Last Action" onClick={handleRedo}>
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
         </header>
     )
 }

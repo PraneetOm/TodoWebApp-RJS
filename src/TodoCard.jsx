@@ -1,9 +1,14 @@
 export default function TodoCard(props) {
-    const {children, deleteTodo, todoIdx, editTodo} = props;
+    const {children, deleteTodo, todoIdx, editTodo, markTodoComplete} = props;
     return (
         <li className="todoItem"> 
-            {children}
+            <h5>{todoIdx+1}.</h5> {children}
             <div className="actionsContainer">
+                <button onClick={() => {
+                    markTodoComplete(todoIdx);
+                }}>
+                    <i class="fa-regular fa-square-check"></i>
+                </button>
 
                 <button onClick={() => {
                     deleteTodo(todoIdx);

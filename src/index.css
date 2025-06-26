@@ -81,6 +81,10 @@ main, .main{
   gap: 14px;
 }
 
+main {
+  padding-bottom: 60px;
+}
+
 .todoItem {
   display: flex;
   align-items: flex-end;
@@ -111,7 +115,7 @@ main, .main{
   gap: 14px;
 }
 
-.actionsContainer button {
+.actionsContainer button, .compButton{
   transition-duration: 200ms;
   border: none;
   background: transparent;

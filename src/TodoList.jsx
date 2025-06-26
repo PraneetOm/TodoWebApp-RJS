@@ -1,8 +1,9 @@
 import React from "react"
 import TodoCard from './TodoCard'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 export default function TodoList(props) {
-    const {todos} = props;
+    const {todos = []} = props;
   if (todos.length === 0) {
     return (
       <div className="empty-state">
@@ -15,11 +16,11 @@ export default function TodoList(props) {
     return (
         <>
             <div class='seperator'>
-                Incomplete Tasks
+                🕒 Things To Do: {todos.length} 
             </div>
             <ul className="main">
                 {todos.map((todo, todoIdx) => {
-                    return (
+                    return (                        
                         <TodoCard {...props} todoIdx={todoIdx} key = {todoIdx}> 
                         <p> {todo} </p>
                         </TodoCard>
