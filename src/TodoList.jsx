@@ -1,6 +1,5 @@
 import React from "react"
 import TodoCard from './TodoCard'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 export default function TodoList(props) {
     const {todos = []} = props;
