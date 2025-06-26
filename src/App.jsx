@@ -47,8 +47,22 @@ function App() {
 
   return (
     <main>
+      <h1 className="app-title">📝 Todo Web App</h1>
+      <p className="tagline">Your simple daily task manager</p>
+
       <TodoInputs todoVal={todoVal} setTodoVal={setTodoVal} handleTodos={addNewTodo} />
       <TodoList editTodo={editTodo} todos={todos} deleteTodo={deleteTodo} /> 
+      <div className="creator-badge">
+        <p>
+          Created by <strong>Praneet Om</strong><br />
+          <a href="https://github.com/PraneetOm/TodoWebApp-RJS" target="_blank" rel="noreferrer">
+            Source Code
+          </a> | 
+          <a href="https://github.com/PraneetOm" target="_blank" rel="noreferrer">GitHub</a> | 
+          <a href="https://linkedin.com/in/praneet-om" target="_blank" rel="noreferrer">LinkedIn</a>
+        </p>
+      </div>
+
     </main>
   )
 }
