@@ -46,14 +46,14 @@ header input {
   width: 100%;
 }
 
-header button {
+header button{
   border-radius: 18px;
   background: transparent;
   transition-duration: 200ms;
   cursor: pointer;
 }
 
-header button:hover {
+header button:hover{
   opacity: 0.7;
 }
 
@@ -63,10 +63,9 @@ input:focus, button:focus {
 }
 
 header button,
-header input {
+header input{
   padding: 14px 18px;
   border: none;
-  outline: none;
   background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
@@ -82,7 +81,7 @@ main, .main{
 }
 
 main {
-  padding-bottom: 60px;
+  padding-bottom: 110px;
 }
 
 .todoItem {
@@ -150,7 +149,7 @@ main {
   opacity: 0.8;
 }
 
-.empty-state {
+.empty-state { 
   text-align: center;
   padding: 60px 30px;
   background: #f0f9ff;
@@ -159,6 +158,12 @@ main {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   max-width: 600px;
   margin: 0 auto;
+  animation: popIn 0.5s ease-in-out;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 .empty-state .emoji {
@@ -211,12 +216,67 @@ main {
 @media (max-width: 480px) {
   header {
     flex-direction: column;
-    align-items: stretch;
+    align-items:center;
   }
-
-  header input,
-  header button {
+  
+  header input, header button {
     width: 100%;
     font-size: 1em;
   }
+
+  header .button-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  header .button-group button {
+    flex: 1;
+    width: auto;
+  }
+  .share-menu {
+    bottom: 80px;
+    right: 14px;
+    transform: scale(0.9);
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.share-menu {
+  position: fixed;
+  bottom: 65px;
+  right: 20px;
+  z-index: 999;
+}
+
+.share-options {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.share-menu button:hover{
+  opacity: 0.7;
+}
+
+input:focus, button:focus {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.share-options, .share-menu button {
+  border-radius: 18px;
+  transition-duration: 200ms;
+  cursor: pointer;
+  padding: 12px 18px;
+  border: none;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }

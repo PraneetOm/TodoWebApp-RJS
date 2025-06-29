@@ -1,0 +1,30 @@
+  function handleShare(type) {
+    let payload;
+
+    if (type === 'todos') payload = { todos };
+    else if (type === 'done') payload = { doneTodos };
+    else payload = { todos, doneTodos };
+
+    const encoded = encodeURIComponent(JSON.stringify(payload));
+    const shareLink = `${window.location.origin}?data=${encoded}`;
+
+    navigator.clipboard.writeText(shareLink);
+    alert('Link copied! Share it with anyone.');
+  }
+
+  useEffect(() => {
+    const param = new URLSearchParams(window.location.search);
+    const shared = param.get("data");
+
+    if (shared) {
+      try {
+        const decoded = JSON.parse(decodeURIComponent(shared));
+
+        (decoded.todos) ? setTodos(decoded.todos) : setTodos([]);
+        (decoded.doneTodos) ? setdoneTodos(decoded.doneTodos) : setdoneTodos([]);
+
+      } catch (err) {
+        console.error("Invalid shared link data");
+      }
+    }
+  }, []);

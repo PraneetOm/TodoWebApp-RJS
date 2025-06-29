@@ -1,11 +1,9 @@
-import React, { useState } from "react"
-
 export default function TodoInputs(props) {
     const { handleTodos, todoVal, setTodoVal, handleUndo, handleRedo } = props;
     return (
         <header>
-            <input 
-                value={todoVal} 
+            <input
+                value={todoVal}
                 onChange={(e) => {
                     setTodoVal(e.target.value);
                 }}
@@ -15,7 +13,8 @@ export default function TodoInputs(props) {
                         setTodoVal('');
                     }
                 }}
-                placeholder="Enter a task..." />
+                placeholder="Enter a task..." 
+            />
 
             <button onClick={() => {
                 if (todoVal != '') {
@@ -23,12 +22,15 @@ export default function TodoInputs(props) {
                     setTodoVal('');
                 }
             }}> Add </button>
-            <button title="Undo Last Action" onClick={handleUndo}>
-                <i class="fa-solid fa-rotate-left"></i>
-            </button>
-            <button title="Redo Last Action" onClick={handleRedo}>
-                <i class="fa-solid fa-rotate-right"></i>
-            </button>
+        
+            <div class="button-group">
+                <button title="Undo Last Action" onClick={handleUndo}>
+                    <i class="fa fa-undo"></i>
+                </button>
+                <button title="Redo Last Action" onClick={handleRedo}>
+                    <i class="fa fa-redo"></i>
+                </button>
+            </div>
         </header>
     )
 }
